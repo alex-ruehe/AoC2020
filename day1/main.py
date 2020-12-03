@@ -1,16 +1,9 @@
-def read_input():
-    data = []
-    with open("input_day_1_puzzle_1.txt") as puzzle_input:
-        for line in puzzle_input:
-            data.append(line.strip())
-
-    return data
-
+from common.read import read_input
 
 if __name__ == "__main__":
 
-    puzzle_input = read_input()
-    puzzle_input = [int(e) for e in puzzle_input]
+    puzzle_input_raw = read_input(1, 1)
+    puzzle_input = [int(e) for e in puzzle_input_raw]
 
     # Puzzle 1 - The sum is supposed to be 2020, which means one of the numbers needs to be >= 1010
 

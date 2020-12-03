@@ -1,14 +1,7 @@
 from collections import Counter
 from typing import List, Tuple
 
-
-def read_input() -> List[str]:
-    data = []
-    with open("input_day2_puzzle_1.txt") as puzzle_input:
-        for line in puzzle_input:
-            data.append(line.strip())
-
-    return data
+from common.read import read_input
 
 
 def parse_password_row(row: str) -> Tuple[int, int, str, str]:
@@ -21,7 +14,7 @@ def parse_password_row(row: str) -> Tuple[int, int, str, str]:
 
 
 def part_1():
-    passwords = read_input()
+    passwords = read_input(2, 1)
     valid = []
     for password in passwords:
         minimum, maximum, character, p = parse_password_row(password)
@@ -37,7 +30,7 @@ def part_2():
     """
     Note: For this task, pos1 and pos2 are not 0-based position in the string, that's why the -1
     """
-    passwords = read_input()
+    passwords = read_input(2, 1)
     valid = []
     for password in passwords:
         pos1, pos2, character, p = parse_password_row(password)
